@@ -8,6 +8,7 @@ import { useState } from 'react'
 import { useRef } from 'react'
 
 const Products = () => {
+    // Data
     const data = [
         {
             id: 1,
