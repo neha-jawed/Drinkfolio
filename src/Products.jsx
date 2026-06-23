@@ -41,16 +41,16 @@ const Products = () => {
     ]
 
 
-const ref = useRef(null)
-const { scrollYProgress } = useScroll({
-  target: ref,
-  offset: ["start end", "start start"]
-})
+    const ref = useRef(null)
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start end", "start start"]
+    })
     const y = useTransform(
-  scrollYProgress,
-  [0, 1],
-  [0, 0]
-)
+        scrollYProgress,
+        [0, 1],
+        [0, 0]
+    )
 
 
     return (
@@ -59,11 +59,12 @@ const { scrollYProgress } = useScroll({
                 data.map((item, idx) => {
                     return (
                         <motion.div
-                          ref={ref}
-                          style={{y:y
-                            
-                          }}
-                         initial={{
+                            ref={ref}
+                            style={{
+                                y: y
+
+                            }}
+                            initial={{
                                 scale: 0.6,
                                 opacity: 0
                             }}
@@ -81,21 +82,27 @@ const { scrollYProgress } = useScroll({
                             className={`min-h-screen sticky top-0  snap-y snap-mandatory  overflow-y-hidden md:no-scrollbar  flex items-center justify-center  text-white transition-colors duration-700 ${item.bg} `} >
 
 
-                            <div className=' flex flex-wrap lg:mt-0 mt-32 items-start justify-between w-full snap-start relative lg:px-10 px-20   '>
+                            <div className=' flex flex-wrap lg:mt-0 mt-23 items-start justify-between w-full snap-start relative lg:px-10 px-20   '>
 
                                 {/* left div */}
-                                <div className='w-70 flex  flex-col ml-10  gap-5 z-20'>
-                                    <h1 className='text-5xl font-medium font-[Oswald]'>Pure Taste</h1>
-                                    <p className='text-base font-medium  font-[Raleway]'>Crafted from nature’s best, every bottle is a blend of pure ingredients and vibrant flavors. Designed to refresh your body, uplift your mind. A little moment of joy in every sip.</p>
+                                <div className='w-70 flex  flex-col  md:ml-10  gap-5 z-2'>
+                                    <h1 className='text-3xl md:text-5xl font-medium font-[Oswald]'>Pure Taste</h1>
+                                    <p className='text-base  font-medium  font-[Raleway]'>Crafted from nature’s best, every bottle is a blend of pure ingredients and vibrant flavors. Designed to refresh your body, uplift your mind. A little moment of joy in every sip.</p>
                                 </div>
 
                                 {/* right div */}
-                                <div className='w-90 flex flex-col items-end mr-10 pr-8 gap-5 z-20'>
-                                    <p className='font-[Raleway] font-medium'>Cucumber Flavor</p>
-                                    <div className='flex gap-5 font-medium  text-sm '>
-                                        <button className='rounded-full cursor-pointer hover:bg-[#c6fd00] text-black bg-white px-2.5 py-5 ' >500 ml</button>
-                                        <button className='rounded-full cursor-pointer hover:bg-[#c6fd00]  bg-white/40 backdrop-blur-md  px-2.5 py-5 '>200 ml</button>
-                                        <button className='rounded-full cursor-pointer hover:bg-[#c6fd00]  bg-white/40 backdrop-blur-md  px-2.5 py-5 '>100 ml</button>
+                                <div className='w-90 flex mt-4 mb-4  lg:mt-0 flex-col lg:items-end items-center mr-10 pr-8 lg:gap-5 z-20'>
+                                    <p className='font-[Raleway] font-bold  '>Cucumber Flavor</p>
+                                    <div className='flex gap-2 font-medium text-sm '>
+                                        <button className='rounded-full cursor-pointer hover:bg-[#c6fd00] text-black bg-white w-16 h-10 flex items-center justify-center'>
+                                            500 ml
+                                        </button>
+                                        <button className='rounded-full cursor-pointer hover:bg-[#c6fd00] bg-white/40 backdrop-blur-md w-16 h-10 flex items-center justify-center'>
+                                            200 ml
+                                        </button>
+                                        <button className='rounded-full cursor-pointer hover:bg-[#c6fd00] bg-white/40 backdrop-blur-md w-16 h-10 flex items-center justify-center'>
+                                            100 ml
+                                        </button>
                                     </div>
                                 </div>
 
@@ -146,9 +153,11 @@ const { scrollYProgress } = useScroll({
                 <div>
 
                 </div>
-                <div className=' fixed text-white text-shadow-2xs text-shadow-amber-50 bottom-10 left-28 md:left-5/12 md:translate-y-2 '>
-                    <p className='font-medium font-[Oswald]'>_______________ Chose your size _______________</p>
-                </div>
+              <div className='fixed text-white text-shadow-2xs text-shadow-amber-50 bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap'>
+  <p className='font-medium font-[Oswald] text-sm md:text-base'>
+    _______________ Chose your size _______________
+  </p>
+</div>
             </div>
         </div>
 
